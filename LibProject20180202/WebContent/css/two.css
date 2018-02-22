@@ -1,0 +1,18 @@
+body{
+	margin: 0 auto;
+	background-image: url("../images/lib4-1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+
+a{
+	color: #fff;
+}
+h1{
+	position : absolute;
+	top: 200px;
+	left: 580px;
+	font-size: 45px;
+	color: white;
+}

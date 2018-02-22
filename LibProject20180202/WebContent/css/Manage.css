@@ -1,0 +1,66 @@
+body{
+	margin: 0 auto;
+	background-image: url("../images/lib4-1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.container{
+	width: 500px;
+	height: 400px;
+	text-align: center;
+	background-color: black;
+	opacity: 0.7;
+	border-radius: 5%;
+	margin: 0 auto;
+	margin-top: 250px;
+}
+.registertd{
+	position: absolute;
+	top: 253px;
+	left: 715px;
+}
+.updatetd{
+	position: absolute;
+	top: 384.2px;
+	left: 715px;
+}
+.deletetd{
+	position: absolute;
+	top: 516px;
+	left: 715px;
+}
+.listtd{
+	position: absolute;
+	top: 253px;
+	left: 960px;
+}
+.searchtd{
+	position: absolute;
+	top: 384.2px;
+	left: 960px;
+}
+.backtd{
+	position: absolute;
+	top: 516px;
+	left: 960px;
+}
+.btn-do{
+	padding: 56px 95px;
+	color: black;
+	border: none;
+	opacity: 0.7;
+	border-bottom: 4px solid black;
+	margin-bottom: 20px;
+	font-weight: bold;
+	border-radius: 10%;
+}
+a{
+	color: #fff;
+}
+h1{
+	position : fixed;
+	top: 145px;
+	left: 840px;
+	font-size: 45px;
+	color: white;
+}

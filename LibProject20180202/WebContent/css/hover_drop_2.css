@@ -1,0 +1,56 @@
+/* .pad1 {width:80px; height:40px; background:#004000; display:inline; float:left; margin:3px 3px 0 3px;height: 50px;}
+.pad2 {width:80px; height:40px; background:#004000; display:inline; float:left; margin:3px 3px 0 0;height: 50px;} */
+
+#menu {list-style-type:none; padding:0; margin:0;}
+#menu ul {
+	list-style-type:none; padding:0; margin:0;
+}
+#menu li {float:left; background:#dcc; margin:3px 3px 0 0; position:relative;height: 50px;}
+#menu li.sub {
+	background:#00a600;
+	/* padding:0; */
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-color: white;
+	border-width: 5px;
+	border: 1px solid white;
+}
+.pad1,.pad2{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#menu table {border-collapse:collapse;position:absolute;top:0;left:0;z-index:80;font-size:1em;}
+
+#menu li a {
+	display: block;
+	color: #ffffff;
+	height: 25px;
+	font-family: arial, sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+	width: 180px;
+	text-decoration: none;
+	text-align: center;
+    vertical-align:middle;
+}
+
+#menu :hover {color:#ee0; background:#988;height: 50px;}
+#menu :hover > a {color:#ee0; background:#988;height: 50px;}
+
+#menu ul, 
+#menu :hover ul ul,
+#menu :hover ul :hover ul ul,
+#menu :hover ul :hover ul ul.left {position:absolute; left:-9999px; width:128px;}
+
+#menu :hover ul{left:0;top:50px; background:url(transparent.gif);}
+
+#menu :hover ul :hover ul,
+#menu :hover ul :hover ul :hover ul {padding:0 3px; left:125px; top:-3px;}
+
+#menu :hover ul :hover ul.left,
+#menu :hover ul :hover ul :hover ul.left {padding:0 3px; left:-131px; top:-3px;}
+.goto{text-decoration: none;
+		color: black;}
+.goto:hover{color: green;
+				text-decoration: underline;}
