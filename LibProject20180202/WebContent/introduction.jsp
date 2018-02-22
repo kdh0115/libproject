@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=LezzRSzQwkHC9sE6oVOK&submodules=geocoder"></script>
+
+
 
 <html lang="en">
 <head>
@@ -132,9 +135,9 @@ th#nanana {
 		<div id="tabs-2">
 			<h2>▶ 찾아오시는 길</h2>
 			<table>
-			<tr><img src="images/map.png" width="800px"></tr>
+			<tr><div id="map" style="width:800px;height:400px;"></div></tr>
 			<tr>
-				<td id="addr"><b>(38453) 경상북도 경산시 진량읍 대구대로 201</td>
+				<td id="addr"><br><b>(38453) 경상북도 경산시 진량읍 대구대로 201</td>
 				</b>
 				</tr>
 				<tr>
@@ -149,6 +152,42 @@ th#nanana {
 			</table>
 		</div>
 	</div>
+	
+	 <script>
+      var map = new naver.maps.Map('map');
+      var myaddress = '대구대로 201';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+      naver.maps.Service.geocode({address: myaddress}, function(status, response) {
+          if (status !== naver.maps.Service.Status.OK) {
+              return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+          }
+          var result = response.result;
+          // 검색 결과 갯수: result.total
+          // 첫번째 결과 결과 주소: result.items[0].address
+          // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
+          console.log(result.items[0].point.x);
+          console.log(result.items[0].point.y);
+          var myaddr = new naver.maps.Point(128.848857, 35.901900);   // 중앙도서관 좌표값
+          map.setCenter(myaddr); // 검색된 좌표로 지도 이동
+          // 마커 표시
+          var marker = new naver.maps.Marker({
+            position: myaddr,
+            map: map
+          });
+          // 마커 클릭 이벤트 처리
+          naver.maps.Event.addListener(marker, "click", function(e) {
+            if (infowindow.getMap()) {
+                infowindow.close();
+            } else {
+                infowindow.open(map, marker);
+            }
+          });
+          // 마크 클릭시 인포윈도우 오픈
+          var infowindow = new naver.maps.InfoWindow({
+              content: '<h4> [도서관]</h4><a href="#" target="_blank"><img src="http://cfile29.uf.tistory.com/image/2255413D56FCE34F21DE38" width="300px"></a>'
+          });
+      });
+      </script>
+	
 </body>
 
 </html>
